@@ -4,7 +4,7 @@ const router = express.Router()
 const { verifyToken, verifyTokenAndAuthorization } = require('../middleware/verifyToken')
 
 //add parcel
-router.post('/', verifyToken, parcelController.addParcel)
+router.post('/', parcelController.addParcel)
 
 //get all parcel
 router.get('/', verifyTokenAndAuthorization ,parcelController.getAllParcel)

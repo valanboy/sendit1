@@ -28,6 +28,10 @@ const userSchema = new mongoose.Schema({
     type: String,
     default: "user",
   },
+  status: {
+    type: Number,
+    default: 0
+  }
 });
 
 //hash password before it is saved
