@@ -1,8 +1,8 @@
 
 const Login = () => {
   return (
-    <div>
-      
+    <div className="text-white">
+      Login
     </div>
   )
 }

@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import Menu from "./components/Menu";
 import Footer from "./components/Footer";
 import Users from "./pages/Users";
+import Login from "./pages/Login"
 
 function App() {
   const Layout = () => {
@@ -38,6 +39,10 @@ function App() {
         { path: "/", element: <Home /> }
       ],
     },
+    {
+      path:"/login",
+      element:<Login/>
+    }
   ]);
   return (
     <>
