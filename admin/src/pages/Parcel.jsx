@@ -1,8 +1,8 @@
 
 const Parcel = () => {
   return (
-    <div>
-      
+    <div className="text-white">
+      Parcel
     </div>
   )
 }

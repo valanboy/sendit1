@@ -1,8 +1,8 @@
 
 const Users = () => {
   return (
-    <div>
-      
+    <div className="text-white">
+      Users
     </div>
   )
 }
