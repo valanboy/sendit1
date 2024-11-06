@@ -57,11 +57,11 @@ const Home = () => {
 />
 </div>
 <div className="h-[350px] w-[300px] shadow-lg p-[20px]">
-<h2 className="flex px-[20px] text-[#fff]">Recent users</h2>
-<ol className="flex flex-col font-semibold justify-end px-[20px] mt-[10px] text-[#d9d9d9]">
-  <li>Believe Gilbert</li>
-  <li>David of Israel</li>
-  <li>Paw paw</li>
+<h2 className="flex px-[20px] font-semibold text-[#fff]">Recent Users</h2>
+<ol className="flex flex-col justify-end px-[20px] mt-[10px] text-[#d9d9d9]">
+  <li>1. Gilbert B.</li>
+  <li>2. Valan boy</li>
+  <li>3. Testimnoy</li>
 </ol>
 </div>
       </div>
