@@ -25,7 +25,7 @@ const router = createBrowserRouter([
     element:<Parcel/>
   },
   {
-    path:"/allparcel", 
+    path:"/allparcels", 
     element:<Parcels/>
   },
 ])

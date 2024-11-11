@@ -1,11 +1,14 @@
 import { useState } from "react";
 import { FaUser } from "react-icons/fa";
+import { Link } from "react-router-dom"
 
 const Myparcels = () => {
   const [Open, setOpen] = useState(false);
   const handleOpen = () => {
     setOpen(!Open);
   };
+
+  
 
   return (
     <div>
@@ -17,7 +20,7 @@ const Myparcels = () => {
         {Open && (
           <div className="absolute top-[20px] right-0 h-[200px] w-[250px] bg-[#d9d9d9] z-[999]">
             <ul className="flex flex-col items-center justify-center mt-[10px] text-[#555]">
-              <li className="hover:text-[#fff] my-[5px]">All Parcels</li>
+             <Link to="/allparcels"><li className="hover:text-[#fff] my-[5px]">All Parcels</li></Link> 
               <li className="hover:text-[#fff] my-[5px]">Statements</li>
               <li className="hover:text-[#fff] my-[5px]">Log out</li>
             </ul>
