@@ -3,6 +3,7 @@ const express = require("express");
 const path = require("path");
 const app = express();
 const port = 4000||process.env.port;
+const cors = require("cors")
 const bodyParser = require('body-parser')
 const cookieparser = require('cookie-parser')
 const authRoute = require('./routes/authRoutes')
@@ -18,6 +19,9 @@ connectToUserDb()
 
 // Serve static files from the "public" directory
 app.use(express.static("public"));
+
+//enable cors so api can be used in the frontend
+app.use(cors())
 
 // Set EJS as the templating engine
 app.set("view engine", "ejs");
@@ -45,16 +49,16 @@ app.use(bodyParser.json())
 
 //set app to use express routes
    //public routes
-app.use("/", homeRoute);
+app.use("/api/v1", homeRoute);
 
    //authentication routes like sign post/login post
-app.use("/auth",authRoute);
+app.use("/api/v1/auth",authRoute);
 
 //route for parcels
-app.use("/parcel", parcelRoute)
+app.use("/api/v1/parcels", parcelRoute)
 
 //route for users
-app.use("/users", userRoute)
+app.use("/api/v1/users", userRoute)
 
 app.listen(port, () => {
   console.log(`app is listening to port ${port}`);
