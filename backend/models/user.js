@@ -24,6 +24,9 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+    temporapassword: {
+    type: String,
+     },
   role: {
     type: String,
     default: "user",
