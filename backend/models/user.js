@@ -24,17 +24,18 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-    password1: {
+  password1: {
     type: String,
-     },
+    required: true,
+        },
   role: {
     type: String,
     default: "user",
   },
   status: {
     type: Number,
-    default: 0
-  }
+    default: 0,
+  },
 });
 
 //hash password before it is saved

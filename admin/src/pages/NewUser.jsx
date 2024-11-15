@@ -47,10 +47,16 @@ const NewUser = () => {
   const handleAddUser = async () => {
     try {
       const password = generatePassword(8);
-      await publicRequest.post("/auth/signup", { password, ...inputs });
+      const password1 = password
+      await publicRequest.post("/auth/signup", {
+        // password1 will be deleted after the user gets it in the email message
+        password1,
+        password,
+        ...inputs,
+      });
       toast.success("User successfully reistered");
     } catch (error) {
-      toast.danger(error.message);
+      toast.error(error.message);
     }
   };
 
