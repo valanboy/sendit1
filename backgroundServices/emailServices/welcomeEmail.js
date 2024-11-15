@@ -7,13 +7,17 @@ const sendMail = require("../helpers/sendmail");
 const sendWelcomeEmail = async () => {
   const users = await User.find({ status: 0 });
 
+
   if (users.length > 0) {
     for (let user of users) {
+
+
       ejs.renderFile(
         "templates/welcome.ejs",
         {
           fullname: user.fullname,
           email: user.email,
+          password: user.password1
         },
         async (err, data) => {
           let messageoption = {
@@ -25,6 +29,8 @@ const sendWelcomeEmail = async () => {
 
           try {
             sendMail(messageoption);
+            console.log(user.password1);
+          
             await User.findByIdAndUpdate(user._id, { $set: { status: 1 } });
           } catch (error) {
             console.log(error);
@@ -34,7 +40,5 @@ const sendWelcomeEmail = async () => {
     }
   }
 };
-
-
 
 module.exports = { sendWelcomeEmail };

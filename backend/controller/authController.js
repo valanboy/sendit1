@@ -19,7 +19,6 @@ const signup_POST = async (req, res) => {
     else if (!userExist) {
       //create a user in database
       const User = await user.create({ fullname, email, ...rest });
-
       res.status(200).json(User);
     }
   } catch (error) {
