@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom"
+import CurrentDateTime from "../components/recentDate"
 
 const Myparcels = () => {
   const [Open, setOpen] = useState(false);
@@ -8,11 +9,15 @@ const Myparcels = () => {
     setOpen(!Open);
   };
 
-  
+const logOut = async() =>{
+
+}  
 
   return (
     <div>
+    <CurrentDateTime/>
       <div className="relative flex items-end justify-end mr-[20%] font-semibold mt-[5%] cursor-pointer">
+      
         <div className="flex items-center text-white" onClick={handleOpen}>
           <FaUser className="mr-[10px]" />
           <span>Believe Gilbert</span>
@@ -22,7 +27,7 @@ const Myparcels = () => {
             <ul className="flex flex-col items-center justify-center mt-[10px] text-[#555]">
              <Link to="/allparcels"><li className="hover:text-[#fff] my-[5px]">All Parcels</li></Link> 
               <li className="hover:text-[#fff] my-[5px]">Statements</li>
-              <li className="hover:text-[#fff] my-[5px]">Log out</li>
+              <li className="hover:text-[#fff] my-[5px]" onClick={logOut}>Log out</li>
             </ul>
           </div>
         )}
