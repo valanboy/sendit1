@@ -1,5 +1,5 @@
-import Navbar from "../compnents/Navbar"
-import Footer from "../compnents/Footer"
+import Navbar from "../components/Navbar"
+import Footer from "../components/Footer"
 
 const Home = () => {
   return (
