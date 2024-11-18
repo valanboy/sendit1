@@ -5,7 +5,7 @@ const Navbar = () => {
     <div className="h-[100px] bg-[#e9eb77] flex items-center justify-between px-[10px]">
       <img src="/logo.png" alt="" height="200px" width="200px" />
      <Link to="/login">
-      <button className="bg-[#1e1e1e] p-[10px] text-gray-300 cursor-pointer border-none w-[100px]">
+      <button className="bg-[#1e1e1e] p-[10px] text-gray-300 cursor-pointer border-none w-[100px] rounded-md">
         Login
       </button>
       </Link>

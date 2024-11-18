@@ -12,6 +12,7 @@ const sendParcelPendingEmail = async () => {
       ejs.renderFile(
         "templates/pendingparcel.ejs",
         {
+          
           sendername: parcel.sendername,
           from: parcel.from,
           to: parcel.to,

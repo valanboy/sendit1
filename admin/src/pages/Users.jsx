@@ -50,23 +50,25 @@ const Users = () => {
   }
 
   return (
-    <div className="m-[30px] bg-[#fff] p-[20px]">
+    <div className="m-[30px] bg-[#fff] w-[80%] p-[20px]">
       <div className="flex items-center justify-between">
         <h1 className="m-[20px] text-[20px]">All Users</h1>
         <Link to="/newuser">
-          <button className="bg-[#1e1e1e] text-white p-[10px] cursor-pointer">
+          <button className="bg-[#1e1e1e] text-white p-[10px] text-[0.75rem] cursor-pointer rounded-xl">
             New User
           </button>
         </Link>
       </div>
-
-      <DataGrid
+<div >
+  <DataGrid
         rows={data}
         getRowId={(row) => row._id}
         columns={columns}
         checkboxSelection
       />
     </div>
+</div>
+      
   );
 };
 

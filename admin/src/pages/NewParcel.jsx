@@ -20,22 +20,23 @@ const NewParcel = () => {
   toast.success("Parcel has been successfully added to our database")
  } catch (error) {
   console.log(error)
+  toast.error("make sure to fill in the form")
  }
   }
 
   return (
-    <div className="m-[30px] bg-[#fff] p-[20px]">
+    <div className="m-[30px] h-[78%] w-[90%] bg-[#fff] p-[20px]">
       <h2 className="font-semibold">New Parcel</h2>
       <div className="flex">
-        <div className="m-[20px]">
-          <div className="flex flex-col my-[20px]">
+        <div className="m-[20px] w-[35%]">
+          <div className="flex flex-col my-[20px] ">
             <label htmlFor="">From</label>
             <input
               type="text"
               name='from'
               onChange={handleChange}
               placeholder="ontario, USA"
-              className="border-2 border-[#555] border-solid p-[10px] w-[300px]"
+              className="border-2 rounded-xl border-[#555] border-solid p-[10px] w-[100%]"
             />
             <label htmlFor="">To</label>
             <input
@@ -43,7 +44,7 @@ const NewParcel = () => {
               name='to'
               onChange={handleChange}
               placeholder="Nevada, Canada"
-              className="border-2 border-[#555] border-solid p-[10px] w-[300px]"
+              className="border-2 rounded-xl border-[#555] border-solid p-[10px] w-[100%]"
             />
             <label htmlFor="">Sender Name</label>
             <input
@@ -51,7 +52,7 @@ const NewParcel = () => {
               name='sendername'
               onChange={handleChange}
               placeholder="Believe Nchere-awaji Gilbert"
-              className="border-2 border-[#555] border-solid p-[10px] w-[300px]"
+              className="border-2 rounded-xl border-[#555] border-solid p-[10px] w-[100%]"
             />
             <label htmlFor="">Recipient Name</label>
             <input
@@ -59,7 +60,7 @@ const NewParcel = () => {
               name='recipientname'
               onChange={handleChange}
               placeholder="Favour Nchere-awaji Gilbert"
-              className="border-2 border-[#555] border-solid p-[10px] w-[300px]"
+              className="border-2 rounded-xl border-[#555] border-solid p-[10px] w-[100%]"
             />
             <label htmlFor="">Sender Email</label>
             <input
@@ -67,7 +68,7 @@ const NewParcel = () => {
               name='senderemail'
               onChange={handleChange}
               placeholder="believegilbert20@gmail.com"
-              className="border-2 border-[#555] border-solid p-[10px] w-[300px]"
+              className="border-2 rounded-xl border-[#555] border-solid p-[10px] w-[100%]"
             />
             <label htmlFor="">Recipient Email</label>
             <input
@@ -75,12 +76,12 @@ const NewParcel = () => {
               name='recipientemail'
               onChange={handleChange}
               placeholder="favourgilbert@demo.com"
-              className="border-2 border-[#555] border-solid p-[10px] w-[300px]"
+              className="border-2 rounded-xl border-[#555] border-solid p-[10px] w-[100%]"
             />
           </div>
         </div>
 
-        <div className="m-[20px]">
+        <div className="m-[20px] w-[35%]">
           <div className="flex flex-col my-[20px]">
             <label htmlFor="">weight</label>
             <input
@@ -88,7 +89,7 @@ const NewParcel = () => {
               name='weight'
               onChange={handleChange}
               placeholder="200g"
-              className="border-2 border-[#555] border-solid p-[10px] w-[300px]"
+              className="border-2 rounded-xl border-[#555] border-solid p-[10px] w-[100%]"
             />
             <label htmlFor="">Cost</label>
             <input
@@ -96,7 +97,7 @@ const NewParcel = () => {
               name='cost'
               onChange={handleChange}
               placeholder="$50"
-              className="border-2 border-[#555] border-solid p-[10px] w-[300px]"
+              className="border-2 rounded-xl border-[#555] border-solid p-[10px] w-[100%]"
             />
             <label htmlFor="">Date</label>
             <input
@@ -104,7 +105,7 @@ const NewParcel = () => {
               name='date'
               onChange={handleChange}
               placeholder="20/10/2024"
-              className="border-2 border-[#555] border-solid p-[10px] w-[300px]"
+              className="border-2 rounded-xl border-[#555] border-solid p-[10px] w-[100%]"
             />
             <label htmlFor="">Note</label>
             <textarea
@@ -112,10 +113,10 @@ const NewParcel = () => {
               name='note'
               onChange={handleChange}
               placeholder="fragile item, handle with care"
-              className="border-2 border-[#555] border-solid p-[10px] w-[300px]"
+              className="border-2 rounded-xl border-[#555] border-solid p-[10px] w-[100%]"
             />
-            <button className="bg-[#1e1e1e] cursor-pointer text-white p-[10px] w-[300px] my-[15px]" onClick={handleAppParcel}>
-              Create
+            <button className="bg-[#1e1e1e] cursor-pointer text-white p-[10px] w-[100%] font-[0.3rem] my-[15px] rounded-xl" onClick={handleAppParcel}>
+              Create Parcel Order
             </button>
 
             <ToastContainer />

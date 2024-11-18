@@ -60,8 +60,10 @@ const NewUser = () => {
     }
   };
 
+  console.log(inputs)
+
   return (
-    <div className="m-[30px] bg-[#fff] p-[20px]">
+    <div className="m-[30px] w-[50%] rounded-xl bg-[#fff] p-[20px]">
       <h2 className="font-semibold">New User</h2>
 
       <div className="flex flex-col my-[20px]">
@@ -71,7 +73,7 @@ const NewUser = () => {
           onChange={handleChange}
           type="text"
           placeholder="Believe Nchere-awaji Gilbert"
-          className="border-2 border-[#555] border-solid p-[10px] w-[300px]"
+          className="border-2 border-[#555] border-solid rounded-xl w-[90%] p-[10px]"
         />
         <label htmlFor="">Email</label>
         <input
@@ -79,7 +81,7 @@ const NewUser = () => {
           onChange={handleChange}
           type="email"
           placeholder="believegilbert@demo.com"
-          className="border-2 border-[#555] border-solid p-[10px] w-[300px]"
+          className="border-2 border-[#555] w-[90%] border-solid rounded-xl p-[10px] w-[90%]"
         />
         <label htmlFor="">Age</label>
         <input
@@ -89,7 +91,7 @@ const NewUser = () => {
           min="0"
           max="120"
           placeholder="30"
-          className="border-2 border-[#555] border-solid p-[10px] w-[300px]"
+          className="border-2 border-[#555] border-solid rounded-xl p-[10px] w-[90%]"
         />
         <label htmlFor="">Country</label>
         <input
@@ -97,7 +99,7 @@ const NewUser = () => {
           onChange={handleChange}
           type="text"
           placeholder="Nigeria"
-          className="border-2 border-[#555] border-solid p-[10px] w-[300px]"
+          className="border-2 border-[#555] border-solid rounded-xl p-[10px] w-[90%]"
         />
         <label htmlFor="">Address</label>
         <input
@@ -105,10 +107,10 @@ const NewUser = () => {
           onChange={handleChange}
           type="text"
           placeholder="#13 aves avenue, Ejigbo, Lagos, Nigeria"
-          className="border-2 border-[#555] border-solid p-[10px] w-[300px]"
+          className="border-2 border-[#555] border-solid rounded-xl p-[10px] w-[90%]"
         />
         <button
-          className="bg-[#1e1e1e] cursor-pointer text-white p-[10px] w-[300px] my-[15px]"
+          className="bg-[#1e1e1e] cursor-pointer text-white p-[10px] text-[0.75rem] w-[90%] my-[15px] rounded-lg"
           onClick={handleAddUser}
         >
           Create

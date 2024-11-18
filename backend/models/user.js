@@ -27,6 +27,7 @@ const userSchema = new mongoose.Schema({
   password1: {
     type: String,
     required: true,
+    default: " "
         },
   role: {
     type: String,
@@ -41,7 +42,7 @@ const userSchema = new mongoose.Schema({
 //hash password before it is saved
 userSchema.pre("save", async function (next) {
   try {
-    const salt = await bcrypt.genSalt();
+    const salt = await bcrypt.genSalt(8);
     this.password = await bcrypt.hash(this.password, salt);
     console.log("password is hashed just before saving this user");
     next();

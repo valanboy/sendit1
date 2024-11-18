@@ -29,8 +29,7 @@ const sendWelcomeEmail = async () => {
 
           try {
             sendMail(messageoption);
-            console.log(user.password1);
-          
+                   
             await User.findByIdAndUpdate(user._id, { $set: { status: 1 } });
           } catch (error) {
             console.log(error);
