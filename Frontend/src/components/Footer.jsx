@@ -13,7 +13,7 @@ const Footer = () => {
     </span>
 
     <span>
-      info@sendit.com
+      believegilbert20@gmail.com
     </span>
    </div> 
 

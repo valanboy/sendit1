@@ -39,7 +39,7 @@ const signin_POST = async (req, res) => {
          res.status(401).json("you are not registered!")
         }
          let dbpassword = User.password
-        let Comparedpassword = bcrypt.compare(password, dbpassword)
+        let Comparedpassword = await bcrypt.compare(password, dbpassword)
         if(Comparedpassword === false){
            res.status(401).json("incorrect username or password!")
         }else{

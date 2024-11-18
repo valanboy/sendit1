@@ -71,12 +71,12 @@ const Parcels = () => {
   };
 
   return (
-    <div className="m-[30px] bg-[#fff] p-[20px]">
+    <div className="m-[30px] w-[85%] bg-[#fff] p-[20px]">
       <div className="flex items-center justify-between">
         <h1 className="m-[20px] text-[20px]">All parcels</h1>
         <Link to="/newparcel">
-          <button className="bg-[#1e1e1e] text-white p-[10px] cursor-pointer">
-            New Parcel
+          <button className="bg-[#1e1e1e] text-[0.75rem] text-white p-[10px] rounded-md cursor-pointer">
+            New Parcel Order
           </button>
         </Link>
       </div>

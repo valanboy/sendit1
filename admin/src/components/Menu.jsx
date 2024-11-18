@@ -15,7 +15,7 @@ import {
 
 const Menu = () => {
   return (
-    <div className="h-[90vh] shadow-xl">
+    <div className="h-[85vh] shadow-xl">
       <ul className="flex flex-col items-center justify-center mt-[20px]">
 
         <Link to="/">

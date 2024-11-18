@@ -3,6 +3,7 @@ import { PieChart } from "@mui/x-charts/PieChart";
 import { useEffect, useState } from "react";
 import { publicRequest } from "../requestMethods";
 
+
 const Home = () => {
   const [parcels, setParcels] = useState([]);
   const [users, setUsers] = useState([]);
@@ -39,7 +40,7 @@ const Home = () => {
   return (
     <div className="">
       <div className="flex items-center">
-        <div className="flex flex-col items-center justify-center text-[#d9d9d9] h-[250px] w-[350px] shadow-lg m-[20px]">
+        <div className="flex flex-col items-center justify-center text-[#d9d9d9] h-[30vh] w-[45vh] shadow-lg m-[20px]">
           <h1 className="text-[20px] font-semibold">Users</h1>
           <div className="flex items-center mt-[20px]">
             <HiArrowSmallUp className="text-[28px] text-green-500" />
@@ -48,7 +49,7 @@ const Home = () => {
           <span className="mt-[20px] text-[18px]"> {usersCount}</span>
         </div>
 
-        <div className="flex flex-col items-center justify-center text-[#d9d9d9] h-[250px] w-[350px] shadow-lg m-[20px]">
+        <div className="flex flex-col items-center justify-center text-[#d9d9d9] h-[30vh] w-[45vh] shadow-lg m-[20px]">
           <h1 className="text-[20px] font-semibold">Delivered Parcels</h1>
           <div className="flex items-center mt-[20px]">
             <HiArrowSmallUp className="text-[28px] text-green-500" />
@@ -68,7 +69,7 @@ const Home = () => {
       </div>
 
       <div className="flex items-center justify-between">
-        <div className="h-[450px] w-[500px] text-[#fff]">
+        <div className="h-[55vh] w-[69vh] text-[#fff]">
           <PieChart
                     series={[
               {
@@ -90,15 +91,16 @@ const Home = () => {
             
           />
         </div>
-        <div className="h-[350px] w-[300px] shadow-lg p-[20px]">
+        <div className="h-[30vh] w-[35vh] shadow-lg p-[20px]">
           <h2 className="flex px-[20px] font-semibold text-[#fff]">
             Recent Users
           </h2>
-          <ol className="flex flex-col justify-end px-[20px] mt-[10px] text-[#d9d9d9]">
-            <li>1. Gilbert B.</li>
-            <li>2. Valan boy</li>
-            <li>3. Testimnoy</li>
-          </ol>
+          {users.map((user, index)=>(
+            <ol className="flex flex-col justify-end px-[20px] mt-[10px] text-[#d9d9d9]" key={index}>
+            <li>{user.fullname}</li>
+             </ol>
+          ))}
+          
         </div>
       </div>
     </div>
