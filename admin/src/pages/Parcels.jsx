@@ -71,9 +71,9 @@ const Parcels = () => {
   };
 
   return (
-    <div className="m-[30px] w-[85%] bg-[#fff] p-[20px]">
+    <div className="m-[3rem] w-[90%] bg-[#fff] p-[1rem]">
       <div className="flex items-center justify-between">
-        <h1 className="m-[20px] text-[20px]">All parcels</h1>
+        <h1 className="m-[1.2rem] text-[1.2rem]">All parcels</h1>
         <Link to="/newparcel">
           <button className="bg-[#1e1e1e] text-[0.75rem] text-white p-[10px] rounded-md cursor-pointer">
             New Parcel Order
@@ -85,7 +85,7 @@ const Parcels = () => {
         rows={data}
         getRowId={(row) => row._id}
         columns={columns}
-        checkboxSelection
+        // checkboxSelection
       />
     </div>
   );

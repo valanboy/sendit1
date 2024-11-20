@@ -5,6 +5,7 @@ import Myparcels from "./pages/Myparcels"
 import Parcel from "./pages/Parcel"
 import Parcels from "./pages/Parcels"
 import { useSelector } from "react-redux"
+import Page404 from "./pages/Page404"
 
 function App() {
   const user = useSelector((state)=> state.user)
@@ -12,7 +13,7 @@ function App() {
 const router = createBrowserRouter([
   {
     path:"/", 
-    element:<Home/>
+    element:user.currentUser ? <Home/> : <Navigate to="/login"/>
   },
   {
     path:"/login", 
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
   {
     path:"/allparcels", 
     element:user.currentUser ? <Parcels/> : <Navigate to="/login"/>
+  },
+  {
+    path:"*", 
+    element:<Page404/>
   },
 ])
   return (

@@ -41,35 +41,36 @@ const Home = () => {
     <div className="">
       <div className="flex items-center">
         <div className="flex flex-col items-center justify-center text-[#d9d9d9] h-[30vh] w-[45vh] shadow-lg m-[20px]">
-          <h1 className="text-[20px] font-semibold">Users</h1>
-          <div className="flex items-center mt-[20px]">
-            <HiArrowSmallUp className="text-[28px] text-green-500" />
-            <HiArrowLongDown className="text-[28px] text-red-500" />
+          <h1 className="text-[1.2rem] font-semibold">Users</h1>
+          <div className="flex items-center mt-[1.2rem]">
+            <HiArrowSmallUp className="text-[1.8rem] text-green-500" />
+            <HiArrowLongDown className="text-[1.8rem] text-red-500" />
           </div>
-          <span className="mt-[20px] text-[18px]"> {usersCount}</span>
+          <span className="mt-[1.2rem] text-[1rem]"> {usersCount}</span>
         </div>
 
         <div className="flex flex-col items-center justify-center text-[#d9d9d9] h-[30vh] w-[45vh] shadow-lg m-[20px]">
-          <h1 className="text-[20px] font-semibold">Delivered Parcels</h1>
-          <div className="flex items-center mt-[20px]">
-            <HiArrowSmallUp className="text-[28px] text-green-500" />
-            <HiArrowLongDown className="text-[28px] text-red-500" />
+          <h1 className="text-[1.2rem] font-semibold">Delivered Parcels</h1>
+          <div className="flex items-center mt-[1.2rem]">
+            <HiArrowSmallUp className="text-[1.8rem] text-green-500" />
+            <HiArrowLongDown className="text-[1.8rem] text-red-500" />
           </div>
-          <span className="mt-[20px] text-[18px]"> {deliveredCount}</span>
+          <span className="mt-[1.2rem] text-[1rem]"> {deliveredCount}</span>
         </div>
 
-        <div className="flex flex-col items-center justify-center text-[#d9d9d9] h-[250px] w-[350px] shadow-lg m-[20px]">
-          <h1 className="text-[20px] font-semibold">Pending Parcels</h1>
-          <div className="flex items-center mt-[20px]">
-            <HiArrowSmallUp className="text-[28px] text-green-500" />
-            <HiArrowLongDown className="text-[28px] text-red-500" />
+        <div className="flex flex-col items-center justify-center text-[#d9d9d9] h-[30vh] w-[45vh] shadow-lg m-[20px]">
+          <h1 className="text-[1.2rem] font-semibold">Pending Parcels</h1>
+          <div className="flex items-center mt-[1.2rem]">
+            <HiArrowSmallUp className="text-[1.8rem] text-green-500" />
+            <HiArrowLongDown className="text-[1.8rem] text-red-500" />
           </div>
-          <span className="mt-[20px] text-[18px]"> {pendingCount}</span>
+          <span className="mt-[1.2rem] text-[1rem]"> {pendingCount}</span>
         </div>
       </div>
 
-      <div className="flex items-center justify-between">
-        <div className="h-[55vh] w-[69vh] text-[#fff]">
+      <div className="block sm:flex items-center justify-between">
+  
+        <div className="h-[45vh] w-[85vw]  text-[#fff] mr-[25%]">
           <PieChart
                     series={[
               {
@@ -79,29 +80,31 @@ const Home = () => {
                   { id: 2, value: usersCount, label: "Users" },
                 ],
                 innerRadius: 30,
-                outerRadius: 100,
-                paddingAngle: 5,
+                outerRadius: 150,
+                paddingAngle: 9,
                 cornerRadius: 5,
                 startAngle: -45,
-                endAngle: 225,
-                cx: 150,
+                endAngle: 235,
+                cx: 120,
                    },
                              
             ]}
             
           />
         </div>
-        <div className="h-[30vh] w-[35vh] shadow-lg p-[20px]">
-          <h2 className="flex px-[20px] font-semibold text-[#fff]">
+        <div className="h-[40vh] w-[100%] shadow-lg p-[1.2rem] m-3 ">
+          <h2 className="flex px-[1.2rem] text-[1rem] font-semibold text-[#fff] ">
             Recent Users
           </h2>
+          <div className="h-[30vh] overflow-auto mt-5">
           {users.map((user, index)=>(
-            <ol className="flex flex-col justify-end px-[20px] mt-[10px] text-[#d9d9d9]" key={index}>
-            <li>{user.fullname}</li>
+            <ol className="flex flex-col justify-end text-[1rem] px-[1.2rem] mt-[0.5rem] text-[#d9d9d9]" key={index}>
+            <li>{user.fullname} kelly</li>
              </ol>
           ))}
-          
+          </div>
         </div>
+        
       </div>
     </div>
   );

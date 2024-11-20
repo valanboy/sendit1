@@ -27,25 +27,27 @@ const signup_POST = async (req, res) => {
 };
 
 const signin_POST = async (req, res) => {
+
+      //get the email and password from the req body by destructuring
+      let { email, password } = req.body;
+
   try {
-    //get the email and password from the req body by destructuring
-    let { email, password } = req.body;
 
     //check database to find user
     const User = await user.findOne({ email: email });
 
     //if no user is found throw an error and rerender signin page
     if (!User){
-         res.status(401).json("you are not registered!")
+       return  res.status(401).json("you are not registered!")
         }
          let dbpassword = User.password
         let Comparedpassword = await bcrypt.compare(password, dbpassword)
         if(Comparedpassword === false){
-           res.status(401).json("incorrect username or password!")
+         return  res.status(401).json("incorrect username or password!")
         }else{
         let token = jwt.sign({_id:User._id, role:User.role}, JwtSecret, {expiresIn: maxAge})
         const {password, ...rest} = User._doc
-        res.status(201).json({token, ...rest})
+        return res.status(201).json({token, ...rest})
         }
 
     }catch (error) {

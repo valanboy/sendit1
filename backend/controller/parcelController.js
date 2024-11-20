@@ -40,6 +40,23 @@ const UpdateParcel = async (req, res) => {
   }
 }
 
+//update parcel status 
+const UpdateParcelStatus = async (req, res) => {
+  const { status1 } = req.body
+  try {
+    const parcel = await Parcel.findByIdAndUpdate(
+      req.params.id,
+      { $set: { status: status1} },
+      {new: true}
+      
+    );
+    res.status(201).json(parcel);
+  } catch (error) {
+    res.status(500).json({error: "Internal server error! could not update status"});
+  }
+}
+
+
 // GET ONE PARCEL
 
 const getOne = async (req, res) => {
@@ -76,4 +93,4 @@ const deleteParcel = async (req, res) => {
   }
 };
 
-module.exports = {addParcel, getAllParcel, UpdateParcel, getOne,getUsersParcel ,deleteParcel}
+module.exports = {addParcel, getAllParcel, UpdateParcel, getOne,getUsersParcel ,deleteParcel, UpdateParcelStatus}

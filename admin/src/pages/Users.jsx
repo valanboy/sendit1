@@ -50,11 +50,11 @@ const Users = () => {
   }
 
   return (
-    <div className="m-[30px] bg-[#fff] w-[80%] p-[20px]">
+    <div className="m-[3rem] bg-[#fff] w-[90%] p-[1.2rem]">
       <div className="flex items-center justify-between">
-        <h1 className="m-[20px] text-[20px]">All Users</h1>
+        <h1 className="m-[1.2rem] text-[1.2rem]">All Users</h1>
         <Link to="/newuser">
-          <button className="bg-[#1e1e1e] text-white p-[10px] text-[0.75rem] cursor-pointer rounded-xl">
+          <button className="bg-[#1e1e1e] text-white p-[0.5rem] text-[0.75rem] cursor-pointer rounded-xl">
             New User
           </button>
         </Link>
@@ -64,7 +64,7 @@ const Users = () => {
         rows={data}
         getRowId={(row) => row._id}
         columns={columns}
-        checkboxSelection
+        // checkboxSelection
       />
     </div>
 </div>

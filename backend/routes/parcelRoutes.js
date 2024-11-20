@@ -12,6 +12,9 @@ router.get('/', parcelController.getAllParcel)
 //update parcel
 router.put("/:id", parcelController.UpdateParcel)
 
+//update parcel status
+router.put("/status/:id", parcelController.UpdateParcelStatus)
+
 //get one parcel
 router.get("/find/:id", parcelController.getOne)
 

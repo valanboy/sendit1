@@ -5,6 +5,7 @@ const Footer = () => {
      <img src="/logo.png" alt="logo" height="200px" width="200px"/>
      <ul className="m-[20px]">
       <li>Admin</li>
+      <li>Gilbert</li>
       <li>&copy; 2024</li>
      </ul>
     </div>
