@@ -4,6 +4,9 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { login } from "../redux/apiCalls";
 import { useDispatch, useSelector } from "react-redux";
+import { toast, ToastContainer } from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -11,7 +14,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const user = useSelector((state) => state.user);
-  const error = useSelector((state) => state.user.error);
+
   const dispatch = useDispatch();
 
   const handleTogglePassword = () => {
@@ -20,16 +23,80 @@ const Login = () => {
 
   
   const handleLogin = async () => {
-    if (email && password) {
+    const validDomains = [
+      "gmail.com",
+      "live.com",
+      "qq.com",
+      "126.com",
+      "163.com",
+      "yahoo.com",
+      "msn.com",
+      "yahoo.co.uk",
+      "yahoo.co.in",
+      "outlook.com",
+      "mac.com",
+      "me.com",
+      "hotmail.com",
+      "orange.fr",
+      "laposte.net",
+      "rediffmail.com",
+      "hotmail.com",
+      "protonmail.com",
+      "icloud.com",
+      ".org",
+      ".edu",
+      ".gov",
+      ".protonmail",
+      ".zohomail",
+      "tutanota.com",
+
+      "protonmail.com",
+      "icloud.com",
+      ".org",
+      ".edu",
+      ".gov",
+      ".protonmail",
+      ".zohomail",
+      "tutanota.com",
+      "btinternet.com",
+      "mail.co.uk",
+      "web.de",
+    ];
+
+    function isInvalidEmail(email) {
+      const domain = email.split("@")[1]; // Extract the domain from the email
+      return !validDomains.includes(domain); // Return true if domain is not in the list
+    }
+
+    const emailIncorrect = isInvalidEmail(email);
+    if(!email && !password){
+      
+    toast.error("email and password field cannot be empty")
+    }
+    else if(!password){
+      toast.error("enter password to login")
+    }
+    
+     else if (emailIncorrect) {
+      toast.error("please enter a valid email address");
+    } else if (!email.includes("@")) {
+      toast.error("please enter a valid email address");
+    }
+
+  
+
+    else if (email && password) {
       try {
         setLoading(true);
         await login(dispatch, { email, password });
         setLoading(false)
       } catch (error) {
-        console.log(error);
+        toast.error(error)
         setLoading(false);
       }
     }
+    
+
   };
 
   console.log(user.currentUser);
@@ -37,6 +104,8 @@ const Login = () => {
   return (
     <div>
       <Navbar />
+      <ToastContainer />
+
       <div className="h-[80vh] flex items-center jusitfy-evenly p-[50px] text-[#757272]">
         <img src="/hero.png" alt="" />
         <div className="h-[450px] w-[450px] bg-[#e9eb77] rounded-md">
@@ -75,18 +144,13 @@ const Login = () => {
             {loading ? "Loading..." : "Login"}
             {user.currentUser && <Navigate to="/myparcels" />}
           </button>
+         
 
-          {error && (
-            <div className="flex items-center justify-center w-[350px] ml-[10%]">
-            <span className="text-red-500 font-semibold text-[15px] " >
-              incorrect email or password, please register through an admin if you are not
-            </span>
-            </div>
-          )}
+          
         </div>
       </div>
       <Footer />
-    </div>
+         </div>
   );
 };
 

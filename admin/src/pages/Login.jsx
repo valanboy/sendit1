@@ -7,8 +7,8 @@ import { toast, ToastContainer } from "react-toastify";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const [email, setEmail] = useState({});
-  const [password, setPassword] = useState({});
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const user = useSelector((state) => state.user);
 
@@ -19,24 +19,82 @@ const Login = () => {
   };
 
   const handleLogin = async () => {
-    if (email && password) {
+    const validDomains = [
+      "gmail.com",
+      "live.com",
+      "qq.com",
+      "126.com",
+      "163.com",
+      "yahoo.com",
+      "msn.com",
+      "yahoo.co.uk",
+      "yahoo.co.in",
+      "outlook.com",
+      "mac.com",
+      "me.com",
+      "hotmail.com",
+      "orange.fr",
+      "laposte.net",
+      "rediffmail.com",
+      "hotmail.com",
+      "protonmail.com",
+      "icloud.com",
+      ".org",
+      ".edu",
+      ".gov",
+      ".protonmail",
+      ".zohomail",
+      "tutanota.com",
+
+      "protonmail.com",
+      "icloud.com",
+      ".org",
+      ".edu",
+      ".gov",
+      ".protonmail",
+      ".zohomail",
+      "tutanota.com",
+      "btinternet.com",
+      "mail.co.uk",
+      "web.de",
+    ];
+
+    function isInvalidEmail(email) {
+      const domain = email.split("@")[1]; // Extract the domain from the email
+      return !validDomains.includes(domain); // Return true if domain is not in the list
+    }
+
+    const emailIncorrect = isInvalidEmail(email);
+
+
+   if(!email && !password){
+    toast.error("please enter your email and password")
+   }   else if (emailIncorrect) {
+    toast.error("please enter a valid email address");
+  } else if (!email.includes("@")) {
+    toast.error("please enter a valid email address");
+  }
+
+    else if(!password){
+     toast.error("enter your password")
+    }
+    else if (email && password) {
       try {
         setLoading(true);
         await login(dispatch, { email, password });
         setLoading(false);
       } catch (error) {
-        console.log(error);
+        toast.error(error);
         setLoading(false);
       }
-    } else {
-      toast.error("please enter your email and password");
-    }
+    } 
+    
   };
 
   return (
-    <div>
-      <div className="h-[80vh] flex items-center justify-evenly p-[50px] text-gray-300">
-        <div>
+    <div className=" ">
+      <div className="block w-[100%] h-[105vh] md:flex items-center justify-evenly  text-gray-300">
+        <div className="">
           <h2 className="text-[#d9d9d9] font-semibold text-[35px]">
             SendIT Admin
           </h2>
@@ -44,31 +102,34 @@ const Login = () => {
           <img src="/hero.png" alt="" />
         </div>
 
-        <div className="h-[55vh] w-[470px] bg-[#E9EB77] rounded-md">
+        <div className="h-[400px] w-[375px] max-w-screen-md:[450px] bg-[#E9EB77] rounded-md">
+          <div className="justify-center items-center relative flex">
           <input
             type="text"
             name="email"
             placeholder="Enter your email"
             onChange={(e) => setEmail(e.target.value.trim())}
-            className="flex items-center justify-center bg-[#fff] p-[20px] w-[78.77%] m-[10%] ml-[5%] outline-none rounded-xl"
+            className="flex items-center justify-center bg-[#fff] p-[20px] w-[300px] m-[8%] outline-none rounded-xl"
           />
-
-          <div className="flex items-center justify-center">
+          </div>
+          <div className="flex items-center justify-center relative ">
             <input
               type={showPassword ? "text" : "password"}
               name="password"
               placeholder="Enter your password"
               onChange={(e) => setPassword(e.target.value.trim())}
-              className="flex items-center justify-center bg-[#fff] p-[20px] w-[78.77%] m-[10%] ml-[3%] outline-none rounded-xl"
+              className="flex items-center justify-center bg-[#fff] p-[20px] w-[300px] m-[5%]  outline-none rounded-xl"
             />
-            <span className="cursor-pointer" onClick={handleToggleVisibility}>
+            <div className="absolute ml-[90%]">
+            <span className=" cursor-pointer" onClick={handleToggleVisibility}>
               {" "}
               {showPassword ? "👁️" : "🔒"}
             </span>
+            </div>
           </div>
 
           <button
-            className="bg-[#1e1e1e] w-[77.78%] text-white font-semibold text-[18px] p-[15px] m-[10%] ml-[6%] rounded-xl"
+            className="bg-[#1e1e1e] w-[77.78%] text-white font-semibold text-[18px] p-[15px] mt-[5%] mb-5 ml-[10%] rounded-xl"
             onClick={handleLogin}
           >
             {loading ? "Loading..." : "Login"}

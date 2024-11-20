@@ -63,17 +63,17 @@ const NewUser = () => {
   console.log(inputs)
 
   return (
-    <div className="m-[30px] w-[50%] rounded-xl bg-[#fff] p-[20px]">
+    <div className="m-[4rem] h-[60vh] w-[60vw] rounded-xl bg-[#fff] p-[1.2rem]">
       <h2 className="font-semibold">New User</h2>
-
-      <div className="flex flex-col my-[20px]">
+<div className="flex">
+      <div className="flex flex-col my-[1.2rem] m-3">
         <label htmlFor="">Full Name</label>
         <input
           name="fullname"
           onChange={handleChange}
           type="text"
           placeholder="Believe Nchere-awaji Gilbert"
-          className="border-2 border-[#555] border-solid rounded-xl w-[90%] p-[10px]"
+          className="border-2 border-[#555] border-solid rounded-xl w-[110%] p-[0.5rem]"
         />
         <label htmlFor="">Email</label>
         <input
@@ -81,7 +81,7 @@ const NewUser = () => {
           onChange={handleChange}
           type="email"
           placeholder="believegilbert@demo.com"
-          className="border-2 border-[#555] w-[90%] border-solid rounded-xl p-[10px] w-[90%]"
+          className="border-2 border-[#555] w-[110%] border-solid rounded-xl p-[0.5rem] "
         />
         <label htmlFor="">Age</label>
         <input
@@ -91,15 +91,18 @@ const NewUser = () => {
           min="0"
           max="120"
           placeholder="30"
-          className="border-2 border-[#555] border-solid rounded-xl p-[10px] w-[90%]"
+          className="border-2 border-[#555] border-solid rounded-xl p-[0.5rem] w-[110%]"
         />
-        <label htmlFor="">Country</label>
+      </div>
+      <div className="flex flex-col my-[1.2rem] m-3">
+
+      <label htmlFor="">Country</label>
         <input
           name="country"
           onChange={handleChange}
           type="text"
           placeholder="Nigeria"
-          className="border-2 border-[#555] border-solid rounded-xl p-[10px] w-[90%]"
+          className="border-2 border-[#555] border-solid rounded-xl p-[0.5rem] w-[110%]"
         />
         <label htmlFor="">Address</label>
         <input
@@ -107,15 +110,16 @@ const NewUser = () => {
           onChange={handleChange}
           type="text"
           placeholder="#13 aves avenue, Ejigbo, Lagos, Nigeria"
-          className="border-2 border-[#555] border-solid rounded-xl p-[10px] w-[90%]"
+          className="border-2 border-[#555] border-solid rounded-xl p-[0.5rem] w-[110%]"
         />
         <button
-          className="bg-[#1e1e1e] cursor-pointer text-white p-[10px] text-[0.75rem] w-[90%] my-[15px] rounded-lg"
+          className="bg-[#1e1e1e] cursor-pointer text-white p-[0.5rem] text-[0.75rem] w-[110%] my-[15px] rounded-lg"
           onClick={handleAddUser}
         >
           Create
         </button>
         <ToastContainer />
+      </div>
       </div>
     </div>
   );
