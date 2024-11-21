@@ -50,7 +50,9 @@ const Users = () => {
   }
 
   return (
+    <div className="h-[100vh] overflow-y-auto">
     <div className="m-[3rem] bg-[#fff] w-[90%] p-[1.2rem]">
+   
       <div className="flex items-center justify-between">
         <h1 className="m-[1.2rem] text-[1.2rem]">All Users</h1>
         <Link to="/newuser">
@@ -68,7 +70,7 @@ const Users = () => {
       />
     </div>
 </div>
-      
+      </div>
   );
 };
 

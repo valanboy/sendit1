@@ -103,20 +103,25 @@ const Login = () => {
 
   return (
     <div>
-      <Navbar />
+    
       <ToastContainer />
 
-      <div className="h-[80vh] flex items-center jusitfy-evenly p-[50px] text-[#757272]">
-        <img src="/hero.png" alt="" />
-        <div className="h-[450px] w-[450px] bg-[#e9eb77] rounded-md">
+      <div className="h-[100vh] w-[100%] block md:flex items-center jusitfy-evenly pt-[50px]  text-[#757272]">
+        <div>
+        <img src="/hero.png" alt="" className="mb-5"/>
+        </div>
+        <div className="h-[350px] w-[340px] bg-[#e9eb77] rounded-md">
+         <div className="flex">
           <input
             type="text"
             name="email"
             id=""
             placeholder="Enter your email"
             onChange={(e) => setEmail(e.target.value.trim())}
-            className="flex items-center justify-center bg-[#fff] p-[20px] w-[350px] m-[10%] outline-none rounded-md"
+            className="flex items-center justify-center bg-[#fff] p-[20px] w-[300px] m-[10%] outline-none rounded-md"
           ></input>
+
+          </div>
           <div className="flex items-center">
             <input
               type={showPassword ? "text" : "password"}
@@ -124,7 +129,7 @@ const Login = () => {
               id=""
               placeholder="Enter your password"
               onChange={(e) => setPassword(e.target.value.trim())}
-              className="flex items-center justify-center bg-[#fff] p-[20px] w-[350px] ml-[10%] outline-none rounded-md"
+              className="flex items-center justify-center bg-[#fff] p-[20px] w-[300px] ml-[10%] outline-none rounded-md"
             ></input>
             <span
               style={{
@@ -137,19 +142,20 @@ const Login = () => {
               {showPassword ? "👁️" : "🔒"}
             </span>
           </div>
+          <div className="flex">
           <button
-            className="bg-[#1e1e1e] w-[350px] p-[15px] text-white font-semibold text-[18px] m-[10%]"
+            className="bg-[#1e1e1e] w-[300px] p-[15px] text-white font-semibold text-[18px] m-[10%] rounded-lg"
             onClick={handleLogin}
           >
             {loading ? "Loading..." : "Login"}
             {user.currentUser && <Navigate to="/myparcels" />}
           </button>
-         
+         </div>
 
           
         </div>
       </div>
-      <Footer />
+    
          </div>
   );
 };

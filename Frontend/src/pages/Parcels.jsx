@@ -36,17 +36,18 @@ const Parcels = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center mt-[3%] mr-[5%] ml-[5%]">
-      <div className="bg-[#fff] h-auto w-[70vw] rounded-md p-[30px]">
+    <div className="h-[100vh] overflow-y-auto w-[90vw] flex flex-col items-center ml-4  mt-[3%] mr-[5%]">
+      <div className="bg-[#fff] h-auto w-[100%]  rounded-md p-[30px]">
+        <div className="mb-10">
         <Link to="/myparcels">
           <FaArrowLeft className="text-[#444] text-[18px] m-2 cursor-pointer" />
         </Link>
-
+</div>
         <div className="flex justify-between p-[10px]">
-          <span className="text-[18px] text-[#444]">All Parcels</span>
+          <span className="text-[1rem] text-[#444]">All Parcels</span>
           <span className="font-semibold text-[#444]">{user.currentUser.fullname}</span>
         </div>
-        <div className="p-3">
+        <div className="p-3 w-[100%]">
           <DataGrid
             rows={parcel}
             getRowId={(row) => row._id}
