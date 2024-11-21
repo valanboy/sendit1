@@ -15,6 +15,9 @@ router.put("/:id", parcelController.UpdateParcel)
 //update parcel status
 router.put("/status/:id", parcelController.UpdateParcelStatus)
 
+// update parcel feedback
+router.put("/feedback/:id", parcelController.UpdateParcelFeeback)
+
 //get one parcel
 router.get("/find/:id", parcelController.getOne)
 

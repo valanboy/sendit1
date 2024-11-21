@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { publicRequest } from "../requestMethods";
+import {FaArrowLeft} from "react-icons/fa"
 
 const Parcel = () => {
   const [parcel, setParcel] = useState({});
@@ -37,7 +38,11 @@ try { setLoading(true)
      }
 
   return (
-    <div className="m-[3rem] h-[87vh] bg-[#fff] p-[1.2rem] w-[75.5vw]">
+    <div className="h-[]">
+    <div className="m-[3rem] h-[100%] bg-[#fff] p-[1.2rem] w-[75.5vw]">
+    <Link to="/orders">
+          <FaArrowLeft className="text-[#444] text-[18px] m-2 cursor-pointer mb-9" />
+        </Link>
       <h2 className="font-semibold ">Parcel</h2>
       <div className="block md:flex justify-evenly m-[2rem]">
         <div className=" ">
@@ -65,17 +70,17 @@ try { setLoading(true)
           
         </div>
         <div className="flex flex-col items-center mt-4">
-          <h2 className="font-semibold">Feeback</h2>
-          <span>Goods received in perfect condition</span>
+          <h2 className="font-semibold">Feedback</h2>
+          <span>{parcel.feedback}</span>
           <button className={parcel.status === 1 || parcel.status === 0 ? "bg-[#555] text-white w-[15rem] cursor-pointer p-[10px] mt-[20px] text-[1.3rem]" : "bg-[#21b134] text-white w-[200px] cursor-pointer p-[10px] m-[20px] text-[1.3rem]"}>
               {parcel.status === 1 || parcel.status === 0 ? "Pending..." : "Delivered"}
             </button>
-          <button className= "bg-[#080808] text-white w-[10rem] cursor-pointer p-[10px] mt-[6rem] rounded-lg text-[1rem]" onClick={updateParcelStatus} >
+          <button className= "bg-[#080808] text-white w-[10rem] cursor-pointer p-[10px] mt-[3rem] rounded-lg text-[1rem]" onClick={updateParcelStatus} >
              {loading? "Loading...": "Update status"}
             </button>
         </div>
       </div>
-    </div>
+    </div></div>
   );
 };
 

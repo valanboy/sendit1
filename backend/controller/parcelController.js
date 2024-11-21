@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Parcel = require("../models/parcel");
+const parcel = require("../models/parcel");
 
 // ADD PARCEL
 
@@ -24,6 +25,22 @@ const getAllParcel = async(req, res) => {
     res.status(500).json(error);
   }
 };
+
+//update parcel feedback
+const UpdateParcelFeeback = async(req, res)=>{
+const { feedback } = req.body
+
+  try {
+   const parcel = await Parcel.findByIdAndUpdate(
+      req.params.id,
+       {$set:{ feedback: feedback }},
+      {new:true}
+    )
+   return res.status(200).json(parcel) 
+  } catch (error) {
+   res.status(500).json(error)
+  }
+}
 
 // UPDATE PARCEL
 
@@ -93,4 +110,4 @@ const deleteParcel = async (req, res) => {
   }
 };
 
-module.exports = {addParcel, getAllParcel, UpdateParcel, getOne,getUsersParcel ,deleteParcel, UpdateParcelStatus}
+module.exports = {addParcel, getAllParcel, UpdateParcel, getOne,getUsersParcel ,deleteParcel, UpdateParcelStatus, UpdateParcelFeeback}

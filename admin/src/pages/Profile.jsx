@@ -9,7 +9,7 @@ const Profile = () => {
 
   return (
 
-    <div className="flex flex-col h-[80vh] items-center justify-center text-gray-300 m-[3rem]">
+    <div className="flex flex-col h-[100vh] items-center justify-center text-gray-300 m-[3rem]">
       
       <div className=" items-center mb-[5%]">
         <img src="profile.svg" width="300px" />
