@@ -39,7 +39,7 @@ const Home = () => {
   },[]);
 
   return (
-    <div className="h-[]">
+    <div className="h-[100%]">
       <div className="flex items-center">
         <div className="flex flex-col items-center justify-center text-[#d9d9d9] h-[30vh] w-[45vh] shadow-lg m-[20px]">
           <h1 className="text-[1rem] font-semibold">Users</h1>

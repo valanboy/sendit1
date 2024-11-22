@@ -50,7 +50,7 @@ const sendParcelDliveredEmail = async () => {
         async (err, data) => {
           let messageoption = {
             from: process.env.EMAIL,
-            to: parcel.recipientemailemail,
+            to: parcel.recipientemail,
             subject: "Your parcel has been delivered",
             html: data,
           };

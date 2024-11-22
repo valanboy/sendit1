@@ -93,7 +93,7 @@ const Login = () => {
 
   return (
     <div className=" ">
-      <div className="block w-[100%] h-[105vh] md:flex items-center justify-evenly  text-gray-300">
+      <div className="block w-[100%] h-[100vh] md:flex items-center justify-evenly  text-gray-300">
         <div className="">
           <h2 className="text-[#d9d9d9] font-semibold text-[35px]">
             SendIT Admin

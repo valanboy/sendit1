@@ -37,11 +37,11 @@ const NewParcel = () => {
         toast.error("please enter 'note!'");
       } 
       else{try {
-        await publicRequest.post("/parcels", { inputs });
+        await publicRequest.post("/parcels", { ...inputs });
         toast.success("Parcel has been successfully added to our database");
       } catch (error) {
         console.log(error);
-        toast.error("make sure to fill in the form correctly");
+        toast.error(error);
       }
     }}
       
