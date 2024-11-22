@@ -70,7 +70,8 @@ const NewUser = () => {
           });
           toast.success("User successfully reistered");
         } catch (error) {
-          toast.error(error.message);
+          toast.error(error.response.data.error);
+          console.log(error)
         }
       }
     }

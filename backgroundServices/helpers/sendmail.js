@@ -2,7 +2,6 @@ const nodemailer = require("nodemailer")
 const dotenv = require("dotenv")
 dotenv.config()
 
-let testAccount = nodemailer.createTestAccount()
 
 
 const createTransporter = (config)=>{
@@ -11,24 +10,33 @@ return transporter;
 }
 
 let configurations = {
-    host: "smtp-relay.brevo.com",
+    host: "smtp-relay.sendinblue.com",
     port: 587,
+secure:false,
     auth:{
         user: process.env.user,
         pass: process.env.PASSWORD
     },
-    connectionTimeout: 10000 // Set timeout to 10 seconds
-}
+    connectionTimeout: 60 * 1000, //30 seconds
+    // debug: true,
+    // logger:true,
+   }
 
 const sendMail = async(messageoption)=>{
+    try {
+        
     const transporter = await createTransporter(configurations)
-    await transporter.verify()
-    await transporter.sendMail(messageoption, (err, info)=>{
-        if(err){
-            console.log(err)
-        }
-        console.log(info.response)
-    })
+    // await transporter.verify()
+    console.log("smtp server is ready to send messages!")
+    await transporter.sendMail(messageoption)
+
+
+    //close the connection after sending mail to avoid leaving it open
+    transporter.close()
+    } catch (error) {
+        console.log(error)
+    }
+
 }
 
 module.exports = sendMail
