@@ -4,7 +4,7 @@ import {FaLongArrowAltRight, FaAccessibleIcon} from "react-icons/fa"
 const Home = () => {
   return (
    
-    <div className="h-[90vh]">
+    <div className="h-[90vh]"> 
     
     <Link to="/login">
      <div className="flex mt-[20%] ml-[50%]">
