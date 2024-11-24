@@ -102,7 +102,7 @@ const Login = () => {
           <img src="/hero.png" alt="" />
         </div>
 
-        <div className="h-[400px] w-[375px] max-w-screen-md:[450px] bg-[#E9EB77] rounded-md">
+        <div className="h-[400px] w-[372px] max-w-screen-md:[450px] bg-[#E9EB77] rounded-md">
           <div className="justify-center items-center relative flex">
           <input
             type="text"
@@ -121,7 +121,7 @@ const Login = () => {
               className="flex items-center justify-center bg-[#fff] p-[20px] w-[300px] m-[5%]  outline-none rounded-xl"
             />
             <div className="absolute ml-[90%]">
-            <span className=" cursor-pointer" onClick={handleToggleVisibility}>
+            <span className=" cursor-pointer mr-5" onClick={handleToggleVisibility}>
               {" "}
               {showPassword ? "👁️" : "🔒"}
             </span>

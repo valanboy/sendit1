@@ -122,25 +122,21 @@ const Login = () => {
           ></input>
 
           </div>
-          <div className="flex items-center">
+          <div className="flex items-center relative">
             <input
               type={showPassword ? "text" : "password"}
               name="password"
               id=""
               placeholder="Enter your password"
               onChange={(e) => setPassword(e.target.value.trim())}
-              className="flex items-center justify-center bg-[#fff] p-[20px] w-[300px] ml-[10%] outline-none rounded-md"
+              className="flex items-center justify-center bg-[#fff] p-[20px] w-[270px]  ml-[10%] outline-none rounded-md"
             ></input>
-            <span
-              style={{
-                display: "inline",
-                cursor: "pointer",
-                fontSize: "20px",
-              }}
-              onClick={handleTogglePassword}
-            >
+            <div className="absolute ml-[90%]">
+            <span className="cursor-pointer mr-4"
+            onClick={handleTogglePassword}>
               {showPassword ? "👁️" : "🔒"}
             </span>
+            </div>
           </div>
           <div className="flex">
           <button
