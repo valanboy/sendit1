@@ -19,10 +19,10 @@ const signup_POST = async (req, res) => {
     else if (!userExist) {
       //create a user in database
       const User = await user.create({ fullname, email, ...rest });
-      res.status(200).json(User);
+     return res.status(200).json(User);
     }
   } catch (error) {
-    res.status(500).json(error);
+   return res.status(500).json(error);
   }
 };
 
@@ -47,6 +47,7 @@ const signin_POST = async (req, res) => {
         }else{
         let token = jwt.sign({_id:User._id, role:User.role}, JwtSecret, {expiresIn: maxAge})
         const {password, ...rest} = User._doc
+        console.log(User._doc)
         return res.status(201).json({token, ...rest})
         }
 

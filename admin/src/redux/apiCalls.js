@@ -4,10 +4,11 @@ import {toast, useToastContainer} from "react-toastify"
 
 export const login = async(dispatch, user)=>{
     const toastcontainer = useToastContainer
+    dispatch(loginStart())
     try {
-        dispatch(loginStart())
+        
         const res = await publicRequest.post("/auth/signin", user)
-        dispatch(loginSuccess(res.data))
+       dispatch(loginSuccess(res.data))
         toast.success("logging you in")
     } catch (error) {
         dispatch(loginFailure())
