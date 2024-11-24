@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Navigate } from "react-router-dom";
 import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
+
 import { login } from "../redux/apiCalls";
 import { useDispatch, useSelector } from "react-redux";
 import { toast, ToastContainer } from "react-toastify"
@@ -156,6 +156,7 @@ const Login = () => {
         </div>
       </div>
     
+    <Footer/>
          </div>
   );
 };

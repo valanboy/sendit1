@@ -21,7 +21,7 @@ connectToUserDb()
 app.use(express.static("public"));
 
 //enable cors so api can be used in the frontend
-app.use(cors())
+app.use(cors({ origin:'*' }))
 
 // Set EJS as the templating engine
 app.set("view engine", "ejs");

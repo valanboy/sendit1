@@ -35,14 +35,12 @@ const router = createBrowserRouter([
   element: <Layout/>,
   children:[
     {
+  
       path:"/", 
       element:<Home/>
-    },
-    {
-      path:"/login", 
-      element:<Login/>
-    },
-    {
+    
+  },
+       {
       path:"/myparcels", 
       element:user.currentUser ? <Myparcels/> : <Navigate to="/login"/>
     },
@@ -59,7 +57,12 @@ const router = createBrowserRouter([
       element:<Page404/>
     },
   ]
-}])
+},
+ {
+  path:"/login", 
+  element:<Login/>
+},
+])
   return (
     <>
   <RouterProvider router={router}/>
