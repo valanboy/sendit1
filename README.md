@@ -1,6 +1,6 @@
 # SendIT
 A courier service website that allows users to create parcel delivery orders and send them to their desired location.
-It consis:
+It consists:
 ### an admin section:
 admins can perform administrative duties like add users, create orders, see all orders and users, update order status and etc.
 ### user section:
