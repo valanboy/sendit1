@@ -1,15 +1,15 @@
 # SendIT
 A courier service website that allows users to create parcel delivery orders and send them to their desired location.
 It consis:
-## 1. an admin section:
+### an admin section:
 admins can perform administrative duties like add users, create orders, see all orders and users, update order status and etc.
-## 2. user section:
+### user section:
 users can log into there account to track their parcel orders and they can give feedback also
 
 ### live link: admin - https://adminsendit.netlify.app/
-### live link: frontend - https://sendit1.netlify.app/
+### live link: users - https://sendit1.netlify.app/
 
-## Api documentation: COMING SOON!
+## Api documentation: Coming soon!
 
 ## Technologies
 ### frontend
