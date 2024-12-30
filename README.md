@@ -3,20 +3,15 @@ A courier service website that allows users to create parcel delivery orders and
 It consis:
 ## 1. an admin section:
 admins can perform administrative duties like add users, create orders, see all orders and users, update order status and etc.
-
-## 1. user section:
+## 2. user section:
 users can log into there account to track their parcel orders and they can give feedback also
 
-
 ### live link: admin - https://adminsendit.netlify.app/
-###                  - https://sendit1.netlify.app/
-
+### live link: frontend - https://sendit1.netlify.app/
 
 ## Api documentation: COMING SOON!
 
-
 ## Technologies
-
 ### frontend
 #### 1. react.js with vite
 #### 2. redux 
@@ -35,10 +30,8 @@ users can log into there account to track their parcel orders and they can give 
 #### 3. brevo (smtp)
 #### 3. Mongodb (database)
 
-
 ## HOW TO USE
 #### Note: this folder consist of subfolders: ADMIN, FRONTEND, BACKEND & BACKGROUND SERVICES
-
 ### 1. clone project into your desired directory
 ### 2. cd into that desired directory and open your IDE
 ### 3. cd into specific folder in your IDE terminal
