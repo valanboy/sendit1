@@ -88,9 +88,10 @@ const Login = () => {
     else if (email && password) {
       try {
         setLoading(true);
+        console.log(email, password)
         await login(dispatch, { email, password });
         setLoading(false)
-      } catch (error) {
+              } catch (error) {
         toast.error(error)
         setLoading(false);
       }
@@ -99,16 +100,16 @@ const Login = () => {
 
   };
 
-  console.log(user.currentUser);
+  // console.log(user.currentUser);
 
   return (
     <div>
     
       <ToastContainer />
 
-      <div className="h-[100vh] w-[100%] block md:flex items-center jusitfy-evenly pt-[50px]  text-[#757272]">
+      <div className="h-[100vh] w-[100%] block lg:flex items-center jusitfy-evenly pt-[50px]  text-[#757272]">
         <div>
-        <img src="/hero.png" alt="" className="mb-5"/>
+        <img src="/hero.png" alt=""  className="mb-5"/>
         </div>
         <div className="h-[350px] w-[340px] bg-[#e9eb77] rounded-md">
          <div className="flex">

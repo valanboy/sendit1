@@ -14,13 +14,13 @@ function App() {
 
 const Layout = () => {
   return (
-    <div>
+   <div>
       <Navbar />
 
         
-        <div className="w-[89%] ">
+       
           <Outlet />
-        </div>
+     
      
 
       <Footer />

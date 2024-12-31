@@ -48,6 +48,7 @@ const signin_POST = async (req, res) => {
         let token = jwt.sign({_id:User._id, role:User.role}, JwtSecret, {expiresIn: maxAge})
         const {password, ...rest} = User._doc
         console.log(User._doc)
+        console.log(token, JwtSecret)
         return res.status(201).json({token, ...rest})
         }
 

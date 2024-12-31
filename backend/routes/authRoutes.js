@@ -10,7 +10,7 @@ router.post("/signup", authcontroller.signup_POST);
 
 router.post("/signin", authcontroller.signin_POST);
 
-router.get("/dashboard", verifyToken , authcontroller.dashboard);
+router.get("/dashboard", authcontroller.dashboard);
 
 router.get('/signout', authcontroller.signout)
 

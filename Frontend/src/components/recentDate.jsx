@@ -13,7 +13,7 @@ function CurrentDateTime() {
   }, []);
 
   return (
-    <div style={{ textAlign: "center",color:"#555", padding: "10px", fontSize: "0.75rem", fontWeight: "bold" }}>
+    <div style={{ textAlign: "center", color:"#242424", padding: "10px", fontSize: "0.75rem", fontWeight: "bold" }}>
       {currentDateTime.toLocaleString()}
     </div>
   );
