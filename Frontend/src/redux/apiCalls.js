@@ -8,6 +8,7 @@ export const login = async (dispatch, user) => {
     dispatch(loginStart());
     const res = await publicRequest.post("/auth/signin", user);
     await dispatch(loginSuccess(res.data));
+    console.log(res.data)
   } catch (error) {
     await dispatch(loginFailure());
     toast.error(error.response.data || error.message);

@@ -66,7 +66,7 @@ const Login = () => {
 
   return (
     <div className=" ">
-      <div className="block w-[100%] h-[100vh] md:flex items-center justify-evenly  text-gray-300">
+      <div className="block justify-center  w-[100%] h-[100vh]  lg:flex items-center lg:justify-evenly  text-gray-300">
         <div className="">
           <h2 className="text-[#d9d9d9] font-semibold text-[35px]">
             SendIT Admin
@@ -75,7 +75,8 @@ const Login = () => {
           <img src="/hero.png" alt="" />
         </div>
 
-        <div className="h-[400px] w-[372px] max-w-screen-md:[450px] bg-[#E9EB77] rounded-md">
+
+        <div className=" h-[400px] w-[372px] bg-[#E9EB77] rounded-md">
           <div className="justify-center items-center relative flex">
           <input
             type="text"

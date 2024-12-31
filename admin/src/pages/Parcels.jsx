@@ -71,7 +71,8 @@ const Parcels = () => {
   };
 
   return (
-    <div className="m-[3rem] w-[90%] bg-[#fff] p-[1rem]">
+<div className="h-[100vh]">
+    <div className="m-[3rem]  w-[90%] bg-[#fff] p-[1rem]">
       <div className="flex items-center justify-between">
         <h1 className="m-[1.2rem] text-[1.2rem]">All parcels</h1>
         <Link to="/newparcel">
@@ -87,6 +88,7 @@ const Parcels = () => {
         columns={columns}
         // checkboxSelection
       />
+    </div>
     </div>
   );
 };
