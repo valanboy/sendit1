@@ -1,11 +1,32 @@
 import { Link } from "react-router-dom"
 import {FaLongArrowAltRight, FaAccessibleIcon} from "react-icons/fa"
+import propTypes from "prop-types"
+import { useState } from "react"
 
-const Home = () => {
+
+ const Child = ({username}) =>{
+  const info = "mark"
+  const passdata = ()=>{
+    username(info)
+  }
+  
+
+  return(
+    <div className="text-white grid justify-center" onClick={passdata}>click to pass data to parent</div>
+  )
+}
+
+ const Home = () => {
+  const [data, setdata] = useState(" ")
+  let username = (info)=>{
+   setdata(info)
+  } 
   return (
    
     <div className="h-[100vh]"> 
-    
+ <Child username={username}/>
+ <div className="text-white">{data}</div>
+   
     <Link to="/login">
      <div className="flex mt-[20%] ml-[50%]">
      <div>
@@ -31,6 +52,10 @@ const Home = () => {
     
    </div>
   )
+}
+
+Child.propTypes = {
+  username: propTypes.string.isRequired,
 }
 
 export default Home
