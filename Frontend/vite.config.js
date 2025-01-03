@@ -5,12 +5,10 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
 base: "/",
-// build: {
-//   rollupOptions: {
-//     external: ['axios'], // Add axios to the external list
-//   }
-// }
-optimizeDeps: {
-  include: ['axios']
+build: {
+  rollupOptions: {
+    external: ['axios'], // Add axios to the external list
+  }
 }
+
 })
