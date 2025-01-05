@@ -6,9 +6,10 @@ export default defineConfig({
   plugins: [react()],
 base: "/",
 build: {
+  outDir: 'dist', // Ensure the output directory is 'dist'
   rollupOptions: {
-    external: ['axios'], // Add axios to the external list
+    external: ['axios'],
   }
-}
+},
 
 })
