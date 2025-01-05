@@ -1,4 +1,4 @@
-import axios from "axios"
+import axios from "redaxios"
 
 const BASE_URL =  "https://sendit1backend.onrender.com/api/v1"
 // const BASE_URL =  import.meta.env.backendApiUrl
