@@ -6,4 +6,5 @@
  NODE_VERSION = "22.11.0"
 
 [functions]
-node_bundler = "esbuild"
+  node_bundler = "esbuild"
+  external_node_modules = ["axios"]
