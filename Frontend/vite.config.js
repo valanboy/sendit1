@@ -7,6 +7,9 @@ export default defineConfig({
 base: "/",
 build: {
   outDir: 'dist', // Ensure the output directory is 'dist'
+  rollupOptions: {
+    external: ['axios'],
+  }
 },
 
 })
