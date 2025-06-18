@@ -9,27 +9,27 @@ const Profile = () => {
 
   return (
 
-    <div className="flex flex-col h-[100vh] items-center justify-center text-gray-300 m-[3rem]">
+    <div className="flex flex-col h-screen items-center  text-gray-700 text-sm m-[3rem]">
       
-      <div className=" items-center mb-[5%]">
-        <img src="profile.svg" width="300px" />
-        <span className="m-[15%] font-semibold text-[1rem] ml-[30%]">{user.currentUser.email}</span>
+      <div className="flex flex-col items-center mb-7">
+        <img src="profile.svg" width="150px" className="md:w-200px mb-2"/>
+        <span className=" font-semibold text-sm text-gray-700 text-center">{user.currentUser.email}</span>
       </div>
 
-<div className="flex ">
-<div className=" items-center ">
-        <p className="m-5  ">Full Name: </p>
-        <p className="m-5 ">Age:  </p>
-        <p className="m-5 ">Country:   </p>
-        <p className="m-5 ">Address: </p>
+<div className="flex justify-center items-center w-[100%]">
+<div className=" items-center space-y-3 h-auto space-x-5 w-[50%] flex flex-col justify-center">
+        <p className="font-semibold ">Full Name: </p>
+        <p className="font-semibold">Age:  </p>
+        <p className="font-semibold">Country:   </p>
+        <p className="font-semibold">Address: </p>
       </div>
      
       
-      <div className=" items-center ">
-        <p className="m-5  ">{user.currentUser.fullname} </p>
-        <p className="m-5 ">{user.currentUser.age} </p>
-        <p className="m-5 ">{user.currentUser.country} </p>
-        <p className="m-5 ">{user.currentUser.address} </p>
+      <div className=" items-center space-y-3 h-auto space-x-5 w-[50%] flex flex-col justify-center">
+        <p className=" ">{user.currentUser.fullname} </p>
+        <p className="">{user.currentUser.age} </p>
+        <p className="">{user.currentUser.country} </p>
+        <p className="">{user.currentUser.address} </p>
       </div>
           </div>
           </div>
