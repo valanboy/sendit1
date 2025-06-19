@@ -42,7 +42,7 @@ const Home = () => {
     <div className="h-auto w-[97%] justify-center mx-auto bg-orange-50">
       <div className="grid grid-cols-3 md:flex md:items-center mt-5 md:justify-evenly gap-1 mr-5">
         <div className="flex flex-col items-center justify-center text-gray-700 h-auto w-[120px] md:w-[250px] md:h-[250px] lg:w-[400px] shadow-lg">
-          <h1 className="text-[13px] pt-2 text-center w-[50px] md:text-[1rem] lg:text-[1.2rem] font-semibold">Users</h1>
+          <h1 className="text-[13px] pt-2 text-center w-[50px] md:w-[150px] md:text-[1rem] lg:text-[1.2rem] font-semibold">Users</h1>
           <div className="flex items-center mt-[1.2rem]">
             <HiArrowSmallUp className="text-[1.2rem] md:text-[1.5rem] lg:text-[1.8rem] text-green-500" />
             <HiArrowLongDown className="text-[1.2rem] md:text-[1.5rem] lg:text-[1.8rem] text-[#e78d63]" />
@@ -51,7 +51,7 @@ const Home = () => {
         </div>
 
         <div className="flex flex-col items-center justify-center text-gray-700 h-auto w-[120px] md:w-[250px] md:h-[250px] lg:w-[400px] shadow-lg">
-          <h1 className="text-[13px] pt-2 text-center w-[50px] md:text-[1rem] lg:text-[1.2rem] font-semibold">Delivered Parcels</h1>
+          <h1 className="text-[13px] pt-2 text-center w-[50px] md:w-[150px] md:text-[1rem] lg:text-[1.2rem] font-semibold">Delivered Parcels</h1>
           <div className="flex items-center mt-[1.2rem]">
             <HiArrowSmallUp className="text-[1.2rem] md:text-[1.5rem] lg:text-[1.8rem] text-green-500" />
             <HiArrowLongDown className="text-[1.2rem] md:text-[1.5rem] lg:text-[1.8rem] text-[#e78d63]" />
@@ -60,7 +60,7 @@ const Home = () => {
         </div>
 
         <div className="flex flex-col items-center justify-center text-gray-700 h-auto w-[120px] md:w-[250px] md:h-[250px] lg:w-[400px] shadow-lg">
-          <h1 className="text-[13px] pt-2 text-center w-[50px] md:text-[1rem] lg:text-[1.2rem] font-semibold">Pending Parcels</h1>
+          <h1 className="text-[13px] pt-2 text-center w-[50px] md:w-[150px] md:text-[1rem] lg:text-[1.2rem] font-semibold">Pending Parcels</h1>
           <div className="flex items-center mt-[1.2rem]">
             <HiArrowSmallUp className="text-[1.2rem] md:text-[1.5rem] lg:text-[1.8rem] text-green-500" />
             <HiArrowLongDown className="text-[1.2rem] md:text-[1.5rem] lg:text-[1.8rem] text-[#e78d63]" />

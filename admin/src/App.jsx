@@ -15,7 +15,7 @@ import Users from "./pages/Users";
 import NewUser from "./pages/NewUser";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
-import Profile from "./pages/profile";
+import Profile from "./pages/Profile";
 import Page404 from "./pages/Page404";
 import Orders from "./pages/Orders";
 import Parcelstatus from "./pages/Parcelstatus";
