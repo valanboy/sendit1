@@ -1,9 +1,7 @@
-import Footer from "../components/Footer";
 import { Link, Navigate } from "react-router-dom";
 import { useState } from "react";
 import { publicRequest } from "../requestMethods";
 import { toast, ToastContainer } from "react-toastify";
-
 
 const Signup = () => {
   const [inputs, setInputs] = useState({});
@@ -68,10 +66,9 @@ const Signup = () => {
     }
 
     const emailIncorrect = isInvalidEmail(inputs.email);
-    if(inputs.age < 18){
-      toast.error("admins must be up to 18 years ")
-    }
-    else if (emailIncorrect) {
+    if (inputs.age < 18) {
+      toast.error("admins must be up to 18 years ");
+    } else if (emailIncorrect) {
       toast.error("please enter a valid email address");
     } else if (inputs.password.length < 6) {
       toast.error("password length must be more than 6 characters");
@@ -96,95 +93,99 @@ const Signup = () => {
   console.log(inputs);
 
   return (
-    <div>
-      <div className="h-[115vh] block md:flex items-center justify-evenly p-[20px] text-gray-300">
-        <div className="mb-3">
-          <h2 className="text-[#d9d9d9] font-semibold text-[35px]">
-            SendIT Admin
-          </h2>
-
-          <img src="/hero.png" alt="" />
+    <div className="h-auto bg-orange-50">
+     <h2 className="text-[#2e58cab7] font-semibold text-[1.5rem] md:text-[2.2rem] lg:text-[2.5rem] text-center pt-[1rem] md:pt-[4rem] md:mb-0 ">
+          SendIT Admin
+        </h2>
+      <div className="md:h-screen md:w-[90%] md:mx-auto md:mt-[-5rem] block md:flex items-center justify-evenly p-[20px] text-gray-300">
+       
+        <div className="flex mb-[1rem] justify-center w-[100%]">
+          <img
+            src="/hero.png"
+            alt=""
+            className="w-full min-w-[350px] max-w-[1100px] mb-5"
+          />
         </div>
 
-        <div className="h-[460px] text-[#666666] w-[340px]   bg-[#E9EB77] rounded-md">
-         <div className="pt-2">
-          <input
-            type="text"
-            name="fullname"
-            placeholder="Enter your full name"
-            onChange={handleChange}
-            className="flex items-center justify-center bg-[#fff]  p-[10px] w-[250px] rounded-xl m-[3%] ml-[10%] outline-none"
-          />
-
-          <input
-            type="email"
-            name="email"
-            placeholder="Enter your email"
-            onChange={handleChange}
-            className="flex items-center justify-center bg-[#fff] p-[10px] w-[250px] rounded-xl m-[3%] ml-[10%] outline-none"
-          />
-
-          <input
-            type="number"
-            name="age"
-            min={18}
-            max={100}
-            placeholder="Enter your age"
-            onChange={handleChange}
-            className="flex items-center justify-center bg-[#fff] p-[10px] w-[250px] rounded-xl m-[3%] ml-[10%] outline-none"
-          />
-
-          <input
-            type="text"
-            name="country"
-            placeholder="Enter your country"
-            onChange={handleChange}
-            className="flex items-center justify-center bg-[#fff] p-[10px] w-[250px] rounded-xl m-[3%] ml-[10%] outline-none"
-          />
-
-          <input
-            type="text"
-            name="address"
-            placeholder="Enter your address"
-            onChange={handleChange}
-            className="flex items-center justify-center bg-[#fff] p-[10px] w-[250px] rounded-xl m-[3%] ml-[10%] outline-none"
-          />
-
-          <div className="flex items-center">
+        <div className="h-auto text-[#666666] w-[80%] md:w-[70%] lg:w-[40%] xl:w-[35%] md:pt-5 mx-auto bg-gray-100 rounded-lg shadow-2xl mb-10 md:mb-0">
+          <div className="w-[100%] pt-4 md:space-y-4 space-y-2 px-4  md:px-10 lg:px-10 xl:px-10 text-sm md:text-[16px] lg:text-[16px] xl:text-[17px]">
             <input
-              type={showPassword ? "text" : "password"}
-              name="password"
-              placeholder="Enter your password"
+              type="text"
+              name="fullname"
+              placeholder="Enter your full name"
               onChange={handleChange}
-              className="flex items-center justify-center bg-[#fff] p-[10px] w-[250px] rounded-xl m-[3%] ml-[10%] outline-none"
+              className="flex items-center justify-center bg-[#fff]  p-[10px] w-full rounded-xl outline-none"
             />
-            <span className="cursor-pointer" onClick={handleToggleVisibility}>
-              {showPassword ? "👁️" : "🔒"}{" "}
-            </span>
-          </div>
 
-          <button
-            className="bg-[#1e1e1e] w-[250px] rounded-xl text-white font-semibold text-[18px] p-[15px] m-[2%] ml-[10%]"
-            onClick={handleAddUser}
-          >
-            {loading ? "Loading..." : "Signup"}
-            {user.email && <Navigate to="/login" />}
-          </button>
-          <ToastContainer />
-          <div className="text-[#6e6e6e] w-[290px] rounded-xl ml-[12%] ">
-            <span>
-              Already have an account?
-              <span className="cursor-pointer hover:underline">
-                <Link to="/login">
-                  <em>login as admin</em>
-                </Link>
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter your email"
+              onChange={handleChange}
+              className="flex items-center justify-center bg-[#fff] p-[10px] w-full rounded-xl outline-none"
+            />
+
+            <input
+              type="number"
+              name="age"
+              min={18}
+              max={100}
+              placeholder="Enter your age"
+              onChange={handleChange}
+              className="flex items-center justify-center bg-[#fff] p-[10px] w-full rounded-xl outline-none"
+            />
+
+            <input
+              type="text"
+              name="country"
+              placeholder="Enter your country"
+              onChange={handleChange}
+              className="flex items-center justify-center bg-[#fff] p-[10px] w-full rounded-xl outline-none"
+            />
+
+            <input
+              type="text"
+              name="address"
+              placeholder="Enter your address"
+              onChange={handleChange}
+              className="flex items-center justify-center bg-[#fff] p-[10px] w-full rounded-xl outline-none"
+            />
+
+<div className="flex items-center justify-between bg-[#fff] p-[10px] w-full rounded-xl outline-none">
+            <div className="flex items-center w-full">
+              <input
+                type={showPassword ? "text" : "password"}
+                name="password"
+                placeholder="Enter your password"
+                onChange={handleChange}
+                className="flex items-center justify-center bg-[#fff] p-[10px] w-full rounded-xl outline-none"
+              />
+              <span className="cursor-pointer" onClick={handleToggleVisibility}>
+                {showPassword ? "👁️" : "🔒"}{" "}
               </span>
-            </span>
+            </div></div>
+
+            <button
+              className="bg-[#e78d63] w-full rounded-xl text-white font-semibold text-sm p-[10px] md:text-[16px] lg:text-[18px] xl:text-[18px] mb-2 mt-2"
+              onClick={handleAddUser}
+            >
+              {loading ? "Loading..." : "Signup"}
+              {user.email && <Navigate to="/login" />}
+            </button>
+            <ToastContainer />
+            <div className="text-[#6e6e6e] w-full text-center text-sm md:text-[16px] lg:text-[18px] xl:text-[18px] rounded-xl pt-2 pb-[1.5rem]">
+              <span>
+                Already have an account?
+                <span className="cursor-pointer hover:underline">
+                  <Link to="/login">
+                    <em>login as admin</em>
+                  </Link>
+                </span>
+              </span>
+            </div>
           </div>
-        </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };
